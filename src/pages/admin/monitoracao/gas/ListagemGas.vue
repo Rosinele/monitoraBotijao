@@ -1,3 +1,5 @@
+<!--Realiza a listagem dos botijoes-->
+
 <template>
   <div class="cards">
     <va-card class="larger-padding col-span-12">
@@ -6,11 +8,13 @@
         <va-popover
           icon="propane_tank"
           color="warning"
-          message="Clique e cadastre um novo Botijão!"
+          message="Clique e cadastre um novo Botijao!"
           placement="right"
           open
         >
-          <va-chip shadow color="primary" to="editar">{{ t('monitora.botijao.botaoNovo') }}</va-chip>
+          <va-chip shadow color="primary" to="editar" @click="novoBotijao">{{
+            t('monitora.botijao.botaoNovo')
+          }}</va-chip>
         </va-popover>
       </va-card-content>
     </va-card>
@@ -18,18 +22,21 @@
     <va-separator />
 
     <div class="cards-container grid grid-cols-12 items-start gap-6 wrap">
-      <template v-for="botijao in botijoes" :key="'item' + botijao.id">
-        <va-card class="col-span-12 sm:col-span-6 md:col-span-3" stripe stripe-color="info">
+      <template v-for="botijao in botijao2" :key="botijao._id.$oid">
+        <va-card class="col-span-12 sm:col-span-6 md:col-span-3" stripe>
           <va-card-title>
-            <va-avatar>
-              <img :src="botijao.imagem" :alt="botijao.nome" />
+            <va-avatar style="border: 2px solid AliceBlue">
+              <img src="../../../../../public/tanque-de-gas.png" alt="Botijao" style="background-color: AliceBlue" />
             </va-avatar>
             <va-spacer />
             {{ botijao.nome }}
             <va-spacer />
-            <va-button size="small" icon="propane_tank" title="Visualizar o botijão" to="visualizar" />
+            <va-button size="small" icon="edit" to="visualizar" @click="setBotijaoCorrente(botijao)" />
           </va-card-title>
-          <va-card-content>{{ botijao.descricao }}</va-card-content>
+          <va-card-content>
+            <div><strong>Status:</strong> {{ botijao.ativo ? 'Ativo' : 'Inativo' }}</div>
+            <div>{{ botijao.descricao }}</div>
+          </va-card-content>
         </va-card>
       </template>
     </div>
@@ -37,35 +44,28 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
+  import { computed } from 'vue'
   import { useI18n } from 'vue-i18n'
-  import { useToast } from 'vuestic-ui'
-  import data from '../../../../data/monitora/botijoes.json'
+  import { useRouter } from 'vue-router'
+  import { listaBotijao, IBotijao } from '../../../../stores/data-atlas'
 
+
+  const router = useRouter()
   const { t } = useI18n()
-  const { init: initToast } = useToast()
-
-  const botijoes = ref(data.slice(0, 6))
-  const appBanners = ref(false)
-  const banners = ref(false)
-  const notifications = ref(true)
-
-  function getGenderIcon(gender: string) {
-    return gender === 'male' ? 'mars' : 'venus'
-  }
-
-  function getGenderColor(gender: string) {
-    return gender === 'male' ? 'info' : 'success'
-  }
-
-  function notify(name: string) {
-    initToast({
-      message: `Clicked ${name}`,
-      position: 'bottom-right',
-    })
-  }
-
-  function toggleStar(botijao: { starred: boolean }) {
-    botijao.starred = !botijao.starred
+  const store = listaBotijao()
+  const botijao2 = computed(() => store.botijaoDTO)
+  const increment = () => store.loadBotijaoList()
+  const novoBotijao = () => store.novoBotijao()
+  increment()
+  store.loadIDDevicesList()
+  /**
+   * Metodo que inicia a visualização do botijao
+   * @param botijao
+   */
+  async function setBotijaoCorrente(botijao: IBotijao) {
+    const store = listaBotijao()
+    await store.setBotijaoCorrente(botijao)
+    await store.carregarMedicoes(botijao)
+    router.push({ name: 'gasVisualizar' })
   }
 </script>
