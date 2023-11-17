@@ -3,7 +3,6 @@
 <template>
   <div class="cards">
     <va-card class="larger-padding col-span-12">
-      <va-card-title>{{ t('monitora.operacoes') }}</va-card-title>
       <va-card-content>
         <va-popover
           icon="propane_tank"
@@ -13,7 +12,7 @@
           open
         >
           <va-chip shadow color="primary" to="editar" @click="novoBotijao">{{
-            t('monitora.botijao.botaoNovo')
+            t('Novo')
           }}</va-chip>
         </va-popover>
       </va-card-content>
@@ -25,8 +24,8 @@
       <template v-for="botijao in botijao2" :key="botijao._id.$oid">
         <va-card class="col-span-12 sm:col-span-6 md:col-span-3" stripe>
           <va-card-title>
-            <va-avatar style="border: 2px solid AliceBlue">
-              <img src="../../../../../public/tanque-de-gas.png" alt="Botijao" style="background-color: AliceBlue" />
+            <va-avatar color="green">
+              <i class="fas fa-gas-cylinder" style="color: white;"></i>
             </va-avatar>
             <va-spacer />
             {{ botijao.nome }}
@@ -49,7 +48,6 @@
   import { useRouter } from 'vue-router'
   import { listaBotijao, IBotijao } from '../../../../stores/data-atlas'
 
-
   const router = useRouter()
   const { t } = useI18n()
   const store = listaBotijao()
@@ -58,6 +56,7 @@
   const novoBotijao = () => store.novoBotijao()
   increment()
   store.loadIDDevicesList()
+  
   /**
    * Metodo que inicia a visualização do botijao
    * @param botijao
