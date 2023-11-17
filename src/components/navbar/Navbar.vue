@@ -9,29 +9,11 @@
           @click="isSidebarMinimized = !isSidebarMinimized"
         />
         <router-link to="/" title="Monitora">
-          <vuestic-logo class="logo" />
+   
         </router-link>
       </div>
     </template>
     <div class="app-navbar-center">
-      <span class="hidden md:block mr-2">{{ t('navbar.messageUs') }}</span>
-      <a
-        class="hidden md:block mr-2"
-        href="mailto:admin@monitora.com.br"
-        target="_blank"
-        :style="{ color: colors.primary }"
-      >
-        admin@monitora.com.br
-      </a>
-      <va-button
-        href="https://github.com/mbacefor/monitora"
-        color="#000000"
-        class="hidden lg:block"
-        icon="github"
-        target="_blank"
-      >
-        {{ t('navbar.repository') }}
-      </va-button>
     </div>
     <template #right>
       <app-navbar-actions class="app-navbar__actions" :user-name="userName" />
