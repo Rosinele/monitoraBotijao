@@ -12,7 +12,7 @@ export const COLOR_THEMES = [
   {
     name: THEME_NAMES.LIGHT,
     colors: {
-      primary: '#154ec1',
+      primary: '#ffffff',
       secondary: '#767c88',
       success: '#3d9209',
       info: '#2c82e0',
@@ -23,7 +23,7 @@ export const COLOR_THEMES = [
   {
     name: THEME_NAMES.DARK,
     colors: {
-      primary: '#6F92DA',
+      primary: '#ffffff',
       secondary: '#A8AEBA',
       success: '#3d9209',
       info: '#2c82e0',
@@ -34,7 +34,7 @@ export const COLOR_THEMES = [
   {
     name: THEME_NAMES.SEMI_DARK,
     colors: {
-      primary: '#6F92DA',
+      primary: '#ffffff',
       secondary: '#A8AEBA',
       success: '#3d9209',
       info: '#2c82e0',
@@ -45,7 +45,7 @@ export const COLOR_THEMES = [
   {
     name: THEME_NAMES.ORIGINAL,
     colors: {
-      primary: '#6EDC7D',
+      primary: '#ffffff',
       secondary: '#A8AEBA',
       success: '#76E18D',
       info: '#2c82e0',
