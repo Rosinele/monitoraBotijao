@@ -42,7 +42,8 @@
               <div class="col-span-12 sm:col-span-10 md:col-span-10">
                 <label for="descricaoBotijao" class="text-lg font-bold text-blue-900">Descrição</label>
                 <va-input id="descricaoBotijao" v-model="dtoBotijao.descricao" type="textarea"
-                  placeholder="Campo livre para descrição do botijão" :rules="[(v) => v || 'Campo obrigatório*']" />
+                  placeholder="Campo livre para descrição do botijão"  
+                  :rules="[(value) => (value && value.length > 5) || 'Campo obrigatório*']"  />
               </div>
               <div class="col-span-12 sm:col-span-6 md:col-span-4">
                 <label for="tipoBotijao" class="text-lg font-bold text-blue-900">Tipo de Botijão</label>
