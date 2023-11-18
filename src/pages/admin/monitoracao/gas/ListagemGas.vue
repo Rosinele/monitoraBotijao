@@ -18,14 +18,14 @@
       <template v-for="botijao in botijao2" :key="botijao._id.$oid">
         <va-card class="col-span-12 sm:col-span-6 md:col-span-3" stripe stripe-color="#1E3A8A ">
           <va-card-title>
-            <va-avatar  color="#1E3A8A">
-              <i class="fas fa-gas-cylinder text-blue-900"></i>
+            <va-avatar color="#DEE5F2" custom-content>
+              <va-icon name="propane_tank" color="primary" style="font-size: 35px;" />
             </va-avatar>
             <va-spacer />
             {{ botijao.nome }}
             <va-spacer />
-            <va-button size="small" color="#DEE5F2"
-      icon-color="#812E9E" to="visualizar" @click="setBotijaoCorrente(botijao)">
+            <va-button size="small" color="#DEE5F2" icon-color="#812E9E" to="visualizar"
+              @click="setBotijaoCorrente(botijao)">
               <i class="fas fa-eye text-blue-900"></i>
             </va-button>
           </va-card-title>
