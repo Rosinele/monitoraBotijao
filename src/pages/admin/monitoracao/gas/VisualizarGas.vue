@@ -122,8 +122,8 @@ const pesoFinal = computed(() => store.pesoFinal)
 async function excluirNovoBotijao() {
   if (dtoBotijao.value?._id) {
     await store.excluirBotijao(dtoBotijao.value._id)
-    const color = colors.success
-    initToast({ message: 'Botijão excluído!', color })
+    const color = colors.backgroundElement
+    initToast({ message: 'Botijão excluído.', color })
     router.push({ name: 'gas' })
   }
 }
