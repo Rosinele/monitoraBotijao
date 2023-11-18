@@ -127,11 +127,11 @@
     if (validate()) {
       await store.salvarGelagua(dtoGarrafao.value)
       router.push({ name: 'agua' })
-      const color = colors.info
-      initToast({ message: 'Novo gelagua criado!', color })
+      const color = colors.backgroundElement
+      initToast({ message: 'Novo gelágua criado.', color })
     } else {
-      const color = colors.danger
-      initToast({ message: 'Novo gelagua criado!', color })
+      const color = colors.backgroundElement
+      initToast({ message: 'Novo gelágua criado.', color })
     }
   }
 
