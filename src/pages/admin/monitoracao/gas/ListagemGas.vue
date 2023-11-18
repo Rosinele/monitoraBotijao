@@ -5,15 +5,11 @@
     <va-card class="larger-padding col-span-12">
       <va-card-content>
         <va-button preset="primary" text-color="#1E3A8A" class="mr-6 mb-3" to="editar" @click="novoBotijao">
-          <i class="fas fa-plus"> </i> {{
-            t('Novo')
-          }}
+          <i class="fas fa-plus"> </i> {{ t('Novo')}}
         </va-button>
       </va-card-content>
     </va-card>
-
     <va-separator />
-
     <div class="cards-container grid grid-cols-12 items-start gap-6 wrap">
       <template v-for="botijao in botijao2" :key="botijao._id.$oid">
         <va-card class="col-span-12 sm:col-span-6 md:col-span-3" stripe stripe-color="#1E3A8A ">
@@ -24,8 +20,7 @@
             <va-spacer />
             {{ botijao.nome }}
             <va-spacer />
-            <va-button size="small" color="#DEE5F2" icon-color="#812E9E" to="visualizar"
-              @click="setBotijaoCorrente(botijao)">
+            <va-button size="small" color="#DEE5F2" icon-color="#812E9E" @click="setBotijaoCorrente(botijao)">
               <i class="fas fa-eye text-blue-900"></i>
             </va-button>
           </va-card-title>
