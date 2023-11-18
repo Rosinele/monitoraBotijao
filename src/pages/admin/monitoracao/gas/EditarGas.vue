@@ -119,11 +119,11 @@ async function salvarNovoBotijao() {
   if (validate()) {
     await store.salvarBotijao(dtoBotijao.value)
     router.push({ name: 'gas' })
-    const color = colors.info
-    initToast({ message: 'Novo botijão criado!', color })
+    const color = colors.backgroundElement
+    initToast({ message: 'Novo botijão criado.', color })
   } else {
-    const color = colors.danger
-    initToast({ message: 'Novo botijão criado!', color })
+    const color = colors.backgroundElement
+    initToast({ message: 'Novo botijão criado.', color })
   }
 }
 </script>
