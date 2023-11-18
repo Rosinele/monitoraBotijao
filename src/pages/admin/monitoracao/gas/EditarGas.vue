@@ -19,32 +19,32 @@
           <form>
             <div class="grid grid-cols-12 gap-6">
               <div class="col-span-12 sm:col-span-8 md:col-span-8 mb-2">
-                <label for="identificadorBotijao" class="text-lg font-bold text-blue-600">Identificador do Botijão</label>
+                <label for="identificadorBotijao"  class="text-lg font-bold text-blue-900">Identificador do Botijão</label>
                 <va-input id="identificadorBotijao" v-model="dtoBotijao._id"
-                  class="bg-gray-100 cursor-not-allowed text-gray-500" placeholder="Identificador" />
+                  class="bg-gray-100 cursor-not-allowed text-gray-500" placeholder="Identificador" readonly  />
               </div>
               <div class="col-span-12 sm:col-span-8 md:col-span-4 md:col-start-1">
-                <label for="nomeBotijao" class="text-lg font-bold text-blue-600">Nome</label>
+                <label for="nomeBotijao"  class="text-lg font-bold text-blue-900">Nome</label>
                 <va-input id="nomeBotijao" v-model="dtoBotijao.nome" placeholder="Nome do Botijão" />
               </div>
               <div class="col-span-12 sm:col-span-8 md:col-span-4">
-                <label for="nomeBotijao" class="text-lg font-bold text-blue-600">Identificador Balança</label>
+                <label for="nomeBotijao"  class="text-lg font-bold text-blue-900">Identificador Balança</label>
                 <va-select v-model="dtoBotijao.identificadorBalanca" searchable text-by="_id" track-by="_id"
                   value-by="_id" :options="dtoListaDeviceID" />
               </div>
               <div class="col-span-12 md:col-span-2 md:col-start-10">
-                <label class="text-lg font-bold text-blue-600">Ativo</label>
+                <label  class="text-lg font-bold text-blue-900">Ativo</label>
                 <fieldset class="flex flex-col">
-                  <va-switch v-model="dtoBotijao.ativo" class="mr-8 mb-2" />
+                  <va-switch v-model="dtoBotijao.ativo" color="#1E3A8A"  class="mr-8 mb-2" />
                 </fieldset>
               </div>
               <div class="col-span-12 sm:col-span-10 md:col-span-10">
-                <label for="descricaoBotijao" class="text-lg font-bold text-blue-600">Descrição</label>
+                <label for="descricaoBotijao"  class="text-lg font-bold text-blue-900">Descrição</label>
                 <va-input id="descricaoBotijao" v-model="dtoBotijao.descricao" type="textarea"
                   placeholder="Campo livre para descrição do botijão" />
               </div>
               <div class="col-span-12 sm:col-span-6 md:col-span-4">
-                <label for="tipoBotijao" class="text-lg font-bold text-blue-600">Tipo de Botijão</label>
+                <label for="tipoBotijao"  class="text-lg font-bold text-blue-900">Tipo de Botijão</label>
                 <select id="tipoBotijao" v-model="dtoBotijao.tipoBotijao" class="w-full p-2 bg-blue-100 rounded">
                   <option value="">Selecione o tipo de botijão</option>
                   <option v-for="tipo in tipoBotijaoData" :key="tipo.id" :value="tipo.id">{{ tipo.nome }}</option>
@@ -52,12 +52,12 @@
               </div>
 
               <div v-if="true" class="col-span-12 sm:col-span-6 md:col-span-4">
-                <label for="pesoMinimo" class="text-lg font-bold text-blue-600">Peso Minimo</label>
+                <label for="pesoMinimo"  class="text-lg font-bold text-blue-900">Peso Minimo</label>
                 <va-input id="pesoMinimo" v-model="dtoBotijao.pesoMinimo"
                   class="bg-gray-100 cursor-not-allowed text-gray-500" type="number" readonly />
               </div>
               <div v-if="true" class="col-span-12 sm:col-span-6 md:col-span-4">
-                <label for="pesoMaximo" class="text-lg font-bold text-blue-600">Peso Máximo</label>
+                <label for="pesoMaximo"  class="text-lg font-bold text-blue-900">Peso Máximo</label>
                 <va-input id="pesoMaximo" v-model="dtoBotijao.pesoMaximo"
                   class="bg-gray-100 cursor-not-allowed text-gray-500" type="number" readonly />
               </div>
@@ -86,6 +86,8 @@ const store = listaBotijao()
 const dtoListaDeviceID = computed(() => store.idDeviceList)
 const carregaDeviceID = () => store.loadIDDevicesList()
 carregaDeviceID()
+
+
 
 const { t } = useI18n()
 const botijaoInstance: IBotijao = {
