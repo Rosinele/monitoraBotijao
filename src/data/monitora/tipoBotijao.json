@@ -6,7 +6,7 @@
       "$numberDecimal": "13"
     },
     "pesoMinimo": {
-      "$numberDecimal": "5"
+      "$numberDecimal": "2"
     }
   },
   {
@@ -16,7 +16,7 @@
       "$numberDecimal": "25"
     },
     "pesoMinimo": {
-      "$numberDecimal": "13"
+      "$numberDecimal": "3"
     }
   },
   {
@@ -26,7 +26,7 @@
       "$numberDecimal": "50"
     },
     "pesoMinimo": {
-      "$numberDecimal": "25"
+      "$numberDecimal": "4"
     }
   },
   {
@@ -36,7 +36,17 @@
       "$numberDecimal": "65"
     },
     "pesoMinimo": {
-      "$numberDecimal": "50"
+      "$numberDecimal": "5"
+    }
+  },
+  {
+    "id": "Coffee",
+    "nome": "Cafeteira XXII da SSIUNI7",
+    "pesoMaximo": {
+      "$numberDecimal": "65"
+    },
+    "pesoMinimo": {
+      "$numberDecimal": "5"
     }
   }
 ]
