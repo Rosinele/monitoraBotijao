@@ -24,7 +24,7 @@
             <va-spacer />
             {{ botijao.nome }}
             <va-spacer />
-            <va-button size="small" color="#DEE5F2" icon-color="#812E9E" to="visualizar"
+            <va-button size="small" color="#DEE5F2" icon-color="#812E9E"
               @click="setBotijaoCorrente(botijao)">
               <i class="fas fa-eye text-blue-900"></i>
             </va-button>
