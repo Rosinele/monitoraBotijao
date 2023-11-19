@@ -2,7 +2,7 @@
   <div class="app-navbar-actions">
     <color-dropdown class="app-navbar-actions__item" />
 
-    <profile-dropdown >
+    <profile-dropdown>
       <span>{{ userName }}</span>
     </profile-dropdown>
   </div>

@@ -1,10 +1,8 @@
 <template>
   <va-dropdown class="color-dropdown pointer" :offset="[13, 0]" stick-to-edges>
-    <template #anchor>
-    </template>
+    <template #anchor> </template>
 
     <va-dropdown-content class="color-dropdown__content pl-8 pr-8 pt-2 pb-2">
-
       <table class="w-full my-4">
         <color-dropdown-item
           v-for="colorName in colorNames"
