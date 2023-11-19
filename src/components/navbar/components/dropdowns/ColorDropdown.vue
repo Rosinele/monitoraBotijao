@@ -1,19 +1,9 @@
 <template>
   <va-dropdown class="color-dropdown pointer" :offset="[13, 0]" stick-to-edges>
     <template #anchor>
-      <va-icon-color />
     </template>
 
     <va-dropdown-content class="color-dropdown__content pl-8 pr-8 pt-2 pb-2">
-      <va-button-toggle
-        v-model="currentTheme"
-        class="color-dropdown__toggle"
-        :options="themeOptions"
-        outline
-        round
-        grow
-        size="small"
-      />
 
       <table class="w-full my-4">
         <color-dropdown-item
